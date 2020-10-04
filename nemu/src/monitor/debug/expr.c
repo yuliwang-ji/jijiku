@@ -7,7 +7,7 @@
 #include <regex.h>
 
 enum {
-	NOTYPE = 256, EQ, UEQ, logical_AND, logical_OR, logical_NOT,Register, Variable, Number, Hex
+	NOTYPE = 256, EQ, UEQ, logical_AND, logical_OR, logical_NOT,Register, Variable, Number, Hex, Eip
 
 	/* TODO: Add more token types */
 
@@ -34,7 +34,7 @@ static struct rule {
         {"&&", logical_AND},                            //logical AND
         {"\\|\\|", logical_OR},                         //logical OR
         {"!", logical_NOT},                             //logical NOT
-        {"\\$[a-dA-D]{h1HL}|\\$[eE]?(ax|dx|cx|bx|bp|si|di|sp)", Register}, //register
+        {"\\$[a-dA-D]{hlHL}|\\$[eE]?(ax|dx|cx|bx|bp|si|di|sp)", Register}, //register
         {"[a_zA_Z_][a-zA-Z0-9_]*", Variable},           //variable
         {"[0-9]{1,10}", Number},                        //nmumber
         {"0[xX][A-Fa-f0-9]{1,8}", Hex},                 //hex
