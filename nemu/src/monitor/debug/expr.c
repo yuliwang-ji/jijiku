@@ -331,7 +331,7 @@ int eval(int p,int q)
 		if(((q-p==1)||(tokens[p+1].type=='('&&tokens[q].type==')'))&&tokens[p].type=='*')
 		{
 		
-			return  lnaddr_read(eval(p+1,q),4);	
+			return  swaddr_read(eval(p+1,q),4);	
 		}
 		op=find_dominant_operator(p,q);
 			
