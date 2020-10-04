@@ -34,10 +34,11 @@ static struct rule {
         {"&&", logical_AND},                            //logical AND
         {"\\|\\|", logical_OR},                         //logical OR
         {"!", logical_NOT},                             //logical NOT
+        {"0[xX][A-Fa-f0-9]{1,8}",Hex},                  //hex
         {"\\$[a-dA-D][hlHL]|\\$[eE]?(ax|dx|cx|bx|bp|si|di|sp)", Register}, //register
         {"[a_zA_Z_][a-zA-Z0-9_]*", Variable},           //variable
         {"[0-9]{1,10}", Number},                        //nmumber
-        {"0[xX][A-Fa-f0-9]{1,8}", Hex},                 //hex
+        
 
 
 
