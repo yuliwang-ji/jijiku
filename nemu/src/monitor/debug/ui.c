@@ -40,6 +40,8 @@ static int cmd_help(char *args);
 static int cmd_si(char *args);
 static int cmd_info(char *args);
 static int cmd_x(char *args);
+static int cmd_p(char *args);
+
 
 static struct {
 	char *name;
@@ -52,6 +54,7 @@ static struct {
         { "si","Single-step execution", cmd_si },
         { "info","info r means print register", cmd_info },
         { "x", "x N $esp means scan memory", cmd_x },
+        { "p", "p EXPR means evaluation of expression", cmd_p },
 	/* TODO: Add more commands */
 
 };
@@ -130,7 +133,14 @@ static int cmd_x(char *args){
           return 0;
 }
 
-
+static int cmd_p(char *args)
+{
+	bool success;
+	int i;
+	i=expr(args,&success);
+	printf("%d\n",i);
+	return 0;
+}
 
 
 
