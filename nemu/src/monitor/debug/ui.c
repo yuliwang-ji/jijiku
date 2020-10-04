@@ -113,15 +113,21 @@ static int cmd_si(char *args){
           return 0;
 }
 
-static int cmd_info(char *args){
-          char *arg = strtok(NULL, " ");
-          int i = 0;
-          if(strcmp(arg, "r") == 0){
-               for(i = 0;i < 8;i++){
-                  printf("%s %x %d\n", regsl[i], cpu.gpr[i]._32, cpu.gpr[i]._32);
-               }
-          }
-          return 0;
+static int cmd_info(char *args)
+{
+	char *arg=strtok(NULL," ");
+	if(strcmp(arg,"r")==0)	
+	{
+                int i;
+		printf("Name\t Hex\t Decimal\n");
+		for(i=0;i<8;i++)
+			printf("%s 0x%x %d\n",regsl[i],cpu.gpr[i]._32,cpu.gpr[i]._32);
+	}
+	else if(strcmp(arg,"w")==0)
+	{
+		print_wp();
+	}
+	return 0;
 }
 
 static int cmd_x(char *args){
