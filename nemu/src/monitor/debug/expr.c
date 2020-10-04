@@ -162,7 +162,7 @@ static bool make_token(char *e) {
 			tokens[nr_token].type=266;
 			break;      
                                
-					default: panic("please implement me");
+					default:
                                                  nr_token--;
                                                  break;
 				}
@@ -380,7 +380,9 @@ uint32_t expr(char *e, bool *success) {
 	}
 
 	/* TODO: Insert codes to evaluate the expression. */
-	panic("please implement me");
-	return 0;
+	 int a;
+          a=eval(0,nr_token);
+            return a;
+
 }
 
