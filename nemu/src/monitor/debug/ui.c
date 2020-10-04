@@ -8,6 +8,11 @@
 #include <readline/history.h>
 
 void cpu_exec(uint32_t);
+WP* new_wp();
+void free_wp(int);
+void print_wp();
+
+
 
 /* We use the `readline' library to provide more flexibility to read from stdin. */
 char* rl_gets() {
@@ -41,6 +46,8 @@ static int cmd_si(char *args);
 static int cmd_info(char *args);
 static int cmd_x(char *args);
 static int cmd_p(char *args);
+static int cmd_w(char *args);
+static int cmd_d(char *args);
 
 
 static struct {
@@ -55,6 +62,8 @@ static struct {
         { "info","info r means print register", cmd_info },
         { "x", "x N $esp means scan memory", cmd_x },
         { "p", "p EXPR means evaluation of expression", cmd_p },
+        {"w","Setting the monitoring point",cmd_w},
+        {"d","Delete monitoring point",cmd_d}, 
 	/* TODO: Add more commands */
 
 };
@@ -142,7 +151,19 @@ static int cmd_p(char *args)
 	return 0;
 }
 
+static int cmd_w(char *args)
+{
+	new_wp(args);
+	return 0;
+}
 
+static int cmd_d(char *args)
+{
+	int i;
+	sscanf(args,"%d",&i);
+	free_wp(i);
+	return 0;
+}
 
 
 
