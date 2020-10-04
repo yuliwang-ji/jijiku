@@ -162,7 +162,7 @@ static bool make_token(char *e) {
 			tokens[nr_token].type=266;
 			break;      
                                
-					default:
+					default: panic("please implement me");
                                                  nr_token--;
                                                  break;
 				}
