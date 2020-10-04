@@ -134,14 +134,14 @@ static int cmd_x(char *args){
           char *arg1 = strtok(NULL, " ");
           char *arg2 = strtok(NULL, " ");
           int len, i = 0;
-          lnaddr_t address;
+          swaddr_t address;
           
           sscanf(arg1, "%d", &len);
           sscanf(arg2, "%x", &address);
       
           printf("0x%x:", address);
           for(i = 0;i < len;i++){
-                 printf("%x ",lnaddr_read(address, 4) );
+                 printf("0x%x ",swaddr_read(address, 4) );
                  address += 4;
           }
           printf("\n");
