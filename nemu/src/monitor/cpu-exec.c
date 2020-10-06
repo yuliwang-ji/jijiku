@@ -75,7 +75,7 @@ void cpu_exec(volatile uint32_t n) {
                
 		/* TODO: check watchpoints here. */
                    int judge = judge_wp();
-                   if(judge == 1){
+                   if(judge == -1){
                       nemu_state = STOP;
                       printf("Triggered the monitoring point\n");
                       return;
