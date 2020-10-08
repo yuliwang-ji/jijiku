@@ -381,14 +381,6 @@ uint32_t expr(char *e, bool *success) {
   //int k=0;
   //for (k=0;k<nr_token;k++)printf("%d %s\n",tokens[k].type,tokens[k].str);
   //printf("eval star\n");*/
- int sum = eval(0,nr_token);
-  int t=0;
-  for(t=0;t<nr_token;t++){
-   int ti=0;
-   for(;ti<32;ti++)tokens[t].str[ti]='\0';//clean the tokens;
-  }
-  return sum;
-
 
  
 
@@ -403,6 +395,15 @@ uint32_t expr(char *e, bool *success) {
 		*success = false;
 		return 0;
 	}
+int sum = eval(0,nr_token);
+  int t=0;
+  for(t=0;t<nr_token;t++){
+   int ti=0;
+   for(;ti<32;ti++)tokens[t].str[ti]='\0';//clean the tokens;
+  }
+  return sum;
+
+
 
 	/* TODO: Insert codes to evaluate the expression. */
 	/* int a;
