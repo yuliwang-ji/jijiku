@@ -412,7 +412,7 @@ uint32_t expr(char *e, bool *success) {
  
 int sum = eval(0,nr_token);
   int t=0;
-  for(t=0;t<nr_token;t++){
+  for(t=0;t<nr_token+1;t++){
    int ti=0;
    for(;ti<32;ti++)tokens[t].str[ti]='\0';//clean the tokens;
   }
