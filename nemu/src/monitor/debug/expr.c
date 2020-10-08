@@ -370,14 +370,16 @@ int eval(int p,int q)
 	}
 	return 0;
 }
-void jiji( ){
+/*void jiji( ){
 int i;
 for(i=0;i<nr_token;i++)
     tokens[i].type='\0';
 
 
-}
+}*/
 uint32_t expr(char *e, bool *success) {
+      int i;  for(i=0;i<nr_token;i++)
+    tokens[i].type='\0';
 	if(!make_token(e)) {
 		*success = false;
 		return 0;
