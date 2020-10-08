@@ -93,6 +93,19 @@ static bool make_token(char *e) {
 		/* Try all rules one by one. */
 		for(i = 0; i < NR_REGEX; i ++) {
 			if(regexec(&re[i], e + position, 1, &pmatch, 0) == 0 && pmatch.rm_so == 0) {
+
+
+
+
+
+
+
+
+
+
+
+
+
 				char *substr_start = e + position;
 				int substr_len = pmatch.rm_eo;
 
@@ -373,16 +386,7 @@ int eval(int p,int q)
 
 uint32_t expr(char *e, bool *success) {
 
-/*int i=0;
-  for(;i<nr_token;i++){
-   if(tokens[i].type == '*'&&(i==0||tokens[i-1].type=='+'||tokens[i-1].type=='-'||tokens[i-1].type=='*'||tokens[i-1].type=='/'||tokens[i-1].type=='&'||tokens[i-1].type=='!'||tokens[i-1].type=='('||tokens[i-1].type==logical_OR||tokens[i-1].type==EQ||tokens[i-1].type==UEQ)){tokens[i].type=DEREF;}
-   if(tokens[i].type == '-'&&(i==0||tokens[i-1].type=='+'||tokens[i-1].type=='-'||tokens[i-1].type=='*'||tokens[i-1].type=='/'||tokens[i-1].type=='&'||tokens[i-1].type=='!'||tokens[i-1].type=='('||tokens[i-1].type==logical_OR||tokens[i-1].type==EQ||tokens[i-1].type==UEQ)){tokens[i].type=NEG;}
-  }
-  //int k=0;
-  //for (k=0;k<nr_token;k++)printf("%d %s\n",tokens[k].type,tokens[k].str);
-  //printf("eval star\n");*/
 
- 
 
 
 
@@ -395,7 +399,18 @@ uint32_t expr(char *e, bool *success) {
 		*success = false;
 		return 0;
 	}
-int sum = eval(0,nr_token);
+
+/*int i=0;
+  for(;i<nr_token;i++){
+   if(tokens[i].type == '*'&&(i==0||tokens[i-1].type=='+'||tokens[i-1].type=='-'||tokens[i-1].type=='*'||tokens[i-1].type=='/'||tokens[i-1].type=='&'||tokens[i-1].type=='!'||tokens[i-1].type=='('||tokens[i-1].type==logical_OR||tokens[i-1].type==EQ||tokens[i-1].type==UEQ)){tokens[i].type=DEREF;}
+   if(tokens[i].type == '-'&&(i==0||tokens[i-1].type=='+'||tokens[i-1].type=='-'||tokens[i-1].type=='*'||tokens[i-1].type=='/'||tokens[i-1].type=='&'||tokens[i-1].type=='!'||tokens[i-1].type=='('||tokens[i-1].type==logical_OR||tokens[i-1].type==EQ||tokens[i-1].type==UEQ)){tokens[i].type=NEG;}
+  }*/
+  int k=0;
+  for (k=0;k<nr_token;k++)printf("%d %s\n",tokens[k].type,tokens[k].str);
+  printf("eval star\n");
+
+ 
+int sum = eval(0,nr_token-1);
   int t=0;
   for(t=0;t<nr_token;t++){
    int ti=0;
@@ -406,7 +421,8 @@ int sum = eval(0,nr_token);
 
 
 	/* TODO: Insert codes to evaluate the expression. */
-	/* int a;
+	
+         /* int a;
           a=eval(0,nr_token);
             return a;*/
 
