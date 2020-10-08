@@ -178,7 +178,7 @@ static bool make_token(char *e) {
                         strncpy(tokens[nr_token].str,&e[position-substr_len],substr_len);
 			break;      
                                
-					default: panic("please implement me");
+					default:
                                                  nr_token--;
                                                  break;
 				}
@@ -387,14 +387,6 @@ int eval(int p,int q)
 uint32_t expr(char *e, bool *success) {
 
 
-
-
-
-
-
-
-
-
 	if(!make_token(e)) {
 		*success = false;
 		return 0;
@@ -418,9 +410,6 @@ int s = eval(0,nr_token);
 
 	/* TODO: Insert codes to evaluate the expression. */
 	
-         /* int a;
-          a=eval(0,nr_token);
-            return a;*/
 
 }
 
