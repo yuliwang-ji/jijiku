@@ -410,7 +410,7 @@ uint32_t expr(char *e, bool *success) {
   printf("eval star\n");
 
  
-int sum = eval(0,nr_token-1);
+int sum = eval(0,nr_token);
   int t=0;
   for(t=0;t<nr_token;t++){
    int ti=0;
