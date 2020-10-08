@@ -406,7 +406,7 @@ uint32_t expr(char *e, bool *success) {
    if(tokens[i].type == '-'&&(i==0||tokens[i-1].type=='+'||tokens[i-1].type=='-'||tokens[i-1].type=='*'||tokens[i-1].type=='/'||tokens[i-1].type=='&'||tokens[i-1].type=='!'||tokens[i-1].type=='('||tokens[i-1].type==logical_OR||tokens[i-1].type==EQ||tokens[i-1].type==UEQ)){tokens[i].type=NEG;}
   }*/
   int k=0;
-  for (k=0;k<nr_token;k++)printf("%d %s\n",tokens[k].type,tokens[k].str);
+  for (k=0;k<nr_token+1;k++)printf("%d %s\n",tokens[k].type,tokens[k].str);
   printf("eval star\n");
 
  
