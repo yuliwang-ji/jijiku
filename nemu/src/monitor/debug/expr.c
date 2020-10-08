@@ -293,7 +293,7 @@ int eval(int p,int q)
 				return cpu.gpr[j]._16;
 			else 
             {
-				if(strcmp(tokens[p].str,"$al")==0)
+				if(strcmp(tokens[p].str+1,"al")==0)
 			 		return reg_b(0);
 				if(strcmp(tokens[p].str+1,"cl")==0)
 					return reg_b(1);
