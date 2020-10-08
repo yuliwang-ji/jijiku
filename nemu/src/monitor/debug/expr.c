@@ -373,23 +373,22 @@ int eval(int p,int q)
 
 uint32_t expr(char *e, bool *success) {
 
-
-
-    /*  int i=0;
+/*int i=0;
   for(;i<nr_token;i++){
-   if(tokens[i].type == '*'&&(i==0||tokens[i-1].type=='+'||tokens[i-1].type=='-'||tokens[i-1].type=='*'||tokens[i-1].type=='/'||tokens[i-1].type=='&'||tokens[i-1].type=='!'||tokens[i-1].type=='('||tokens[i-1].type==OR||tokens[i-1].type==EQ||tokens[i-1].type==UEQ)){tokens[i].type=DEREF;}
-   if(tokens[i].type == '-'&&(i==0||tokens[i-1].type=='+'||tokens[i-1].type=='-'||tokens[i-1].type=='*'||tokens[i-1].type=='/'||tokens[i-1].type=='&'||tokens[i-1].type=='!'||tokens[i-1].type=='('||tokens[i-1].type==OR||tokens[i-1].type==EQ||tokens[i-1].type==UEQ)){tokens[i].type=NEG;}
+   if(tokens[i].type == '*'&&(i==0||tokens[i-1].type=='+'||tokens[i-1].type=='-'||tokens[i-1].type=='*'||tokens[i-1].type=='/'||tokens[i-1].type=='&'||tokens[i-1].type=='!'||tokens[i-1].type=='('||tokens[i-1].type==logical_OR||tokens[i-1].type==EQ||tokens[i-1].type==UEQ)){tokens[i].type=DEREF;}
+   if(tokens[i].type == '-'&&(i==0||tokens[i-1].type=='+'||tokens[i-1].type=='-'||tokens[i-1].type=='*'||tokens[i-1].type=='/'||tokens[i-1].type=='&'||tokens[i-1].type=='!'||tokens[i-1].type=='('||tokens[i-1].type==logical_OR||tokens[i-1].type==EQ||tokens[i-1].type==UEQ)){tokens[i].type=NEG;}
   }
   //int k=0;
   //for (k=0;k<nr_token;k++)printf("%d %s\n",tokens[k].type,tokens[k].str);
-  //printf("eval star\n");
-  sum = eval(0,nr_token-1);*/
+  //printf("eval star\n");*/
+ int sum = eval(0,nr_token-1);
   int t=0;
   for(t=0;t<nr_token;t++){
    int ti=0;
    for(;ti<32;ti++)tokens[t].str[ti]='\0';//clean the tokens;
   }
- 
+  return sum;
+
 
  
 
@@ -406,9 +405,9 @@ uint32_t expr(char *e, bool *success) {
 	}
 
 	/* TODO: Insert codes to evaluate the expression. */
-	 int a;
+	/* int a;
           a=eval(0,nr_token);
-            return a;
+            return a;*/
 
 }
 
