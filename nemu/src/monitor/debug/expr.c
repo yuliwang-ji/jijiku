@@ -400,23 +400,19 @@ uint32_t expr(char *e, bool *success) {
 		return 0;
 	}
 
-/*int i=0;
-  for(;i<nr_token;i++){
-   if(tokens[i].type == '*'&&(i==0||tokens[i-1].type=='+'||tokens[i-1].type=='-'||tokens[i-1].type=='*'||tokens[i-1].type=='/'||tokens[i-1].type=='&'||tokens[i-1].type=='!'||tokens[i-1].type=='('||tokens[i-1].type==logical_OR||tokens[i-1].type==EQ||tokens[i-1].type==UEQ)){tokens[i].type=DEREF;}
-   if(tokens[i].type == '-'&&(i==0||tokens[i-1].type=='+'||tokens[i-1].type=='-'||tokens[i-1].type=='*'||tokens[i-1].type=='/'||tokens[i-1].type=='&'||tokens[i-1].type=='!'||tokens[i-1].type=='('||tokens[i-1].type==logical_OR||tokens[i-1].type==EQ||tokens[i-1].type==UEQ)){tokens[i].type=NEG;}
-  }*/
-  int k=0;
+
+  /*int k=0;
   for (k=0;k<nr_token+1;k++)printf("%d %s\n",tokens[k].type,tokens[k].str);
-  printf("eval star\n");
+  printf("eval star\n");*/
 
  
-int sum = eval(0,nr_token);
-  int t=0;
-  for(t=0;t<nr_token+1;t++){
-   int ti=0;
-   for(;ti<32;ti++)tokens[t].str[ti]='\0';//clean the tokens;
+int s = eval(0,nr_token);
+  int i;
+  for(i=0;i<nr_token+1;i++){
+   int j=0;
+   for(;j<32;j++)tokens[i].str[j]='\0';//clean the tokens;
   }
-  return sum;
+  return s;
 
 
 
