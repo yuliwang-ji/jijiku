@@ -362,7 +362,7 @@ int eval(int p,int q)
 
 uint32_t expr(char *e, bool *success) {
 
-       init_regex();
+       
 
 	if(!make_token(e)) {
 		*success = false;
@@ -376,11 +376,11 @@ uint32_t expr(char *e, bool *success) {
 
  *success = true;
 int s = eval(0,nr_token);
-  /*int i;
+  int i;
   for(i=0;i<nr_token+1;i++){
    int j=0;
    for(;j<32;j++)tokens[i].str[j]='\0';//clean the tokens;
-  }*/
+  }
   return s;
 
 
