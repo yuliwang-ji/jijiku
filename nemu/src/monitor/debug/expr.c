@@ -38,18 +38,6 @@ static struct rule {
         {"\\$[a-dA-D][hlHL]|\\$[eE]?(ax|dx|cx|bx|bp|si|di|sp)", Register}, //register
         {"[a_zA_Z_][a-zA-Z0-9_]*", Variable},           //variable
         {"[0-9]{1,10}", Number},                        //nmumber
-        
-
-
-
-
-
-
-
-
-
-
-
 };
 
 #define NR_REGEX (sizeof(rules) / sizeof(rules[0]) )
@@ -93,20 +81,7 @@ static bool make_token(char *e) {
 		/* Try all rules one by one. */
 		for(i = 0; i < NR_REGEX; i ++) {
 			if(regexec(&re[i], e + position, 1, &pmatch, 0) == 0 && pmatch.rm_so == 0) {
-
-
-
-
-
-
-
-
-
-
-
-
-
-				char *substr_start = e + position;
+                                char *substr_start = e + position;
 				int substr_len = pmatch.rm_eo;
 
 				Log("match rules[%d] = \"%s\" at position %d with len %d: %.*s", i, rules[i].regex, position, substr_len, substr_len, substr_start);
@@ -386,6 +361,7 @@ int eval(int p,int q)
 
 uint32_t expr(char *e, bool *success) {
 
+       init_regex();
 
 	if(!make_token(e)) {
 		*success = false;
@@ -399,11 +375,11 @@ uint32_t expr(char *e, bool *success) {
 
  
 int s = eval(0,nr_token);
-  int i;
+  /*int i;
   for(i=0;i<nr_token+1;i++){
    int j=0;
    for(;j<32;j++)tokens[i].str[j]='\0';//clean the tokens;
-  }
+  }*/
   return s;
 
 
