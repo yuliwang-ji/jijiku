@@ -317,6 +317,7 @@ int eval(int p,int q)
 		{
 			i=eval(p+1,q);
 			return !i;
+
 		}
 		if(((q-p==1)||(tokens[p+1].type=='('&&tokens[q].type==')'))&&tokens[p].type=='*')
 		{
@@ -373,7 +374,7 @@ uint32_t expr(char *e, bool *success) {
   for (k=0;k<nr_token+1;k++)printf("%d %s\n",tokens[k].type,tokens[k].str);
   printf("eval star\n");*/
 
- 
+ *success = true;
 int s = eval(0,nr_token);
   /*int i;
   for(i=0;i<nr_token+1;i++){
